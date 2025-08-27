@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="box_world">
+    <gravity>0 0 -9.81</gravity>
+
+    <!-- Ground plane (inline, no external model needed) -->
+<model name="ground">
+  <static>true</static>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <plane>
+          <normal>0 0 1</normal>
+          <size>200 200</size>
+        </plane>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <plane>
+          <normal>0 0 1</normal>
+          <size>200 200</size>
+        </plane>
+      </geometry>
+      <material>
+        <ambient>0.3 0.3 0.3 1</ambient>
+        <diffuse>0.3 0.3 0.3 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+    <!-- A simple pushable box -->
+    <model name="push_box">
+      <pose>0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <inertial><mass>5.0</mass></inertial>
+        <collision name="collision">
+          <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.2 0.2 0.8 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Differential drive robot (with DiffDrive plugin) -->
+<model name="diffdrive_robot">
+  <pose>1 0 0.1 0 0 0</pose>
+
+  <link name="chassis">
+    <pose>0 0 0.1 0 0 0</pose>
+    <inertial><mass>5.0</mass></inertial>
+    <collision name="collision">
+      <geometry><box><size>0.4 0.3 0.2</size></box></geometry>
+      <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+    </collision>
+    <visual name="visual">
+      <geometry><box><size>0.4 0.3 0.2</size></box></geometry>
+      <material><ambient>0.1 0.8 0.1 1</ambient></material>
+    </visual>
+  </link>
+
+  <link name="left_wheel">
+  <pose>0 0.2 0.05 0 0 0</pose>
+  <inertial><mass>0.2</mass></inertial>
+
+  <collision name="collision">
+    <geometry>
+      <cylinder><radius>0.05</radius><length>0.02</length></cylinder>
+    </geometry>
+    <!-- rotate cylinder axis Z -> Y -->
+    <pose>0 0 0 1.5708 0 0</pose>
+  </collision>
+
+  <visual name="visual">
+    <geometry>
+      <cylinder><radius>0.05</radius><length>0.02</length></cylinder>
+    </geometry>
+    <!-- rotate cylinder axis Z -> Y -->
+    <pose>0 0 0 1.5708 0 0</pose>
+    <material><ambient>0.2 0.2 0.2 1</ambient></material>
+  </visual>
+</link>
+
+<link name="right_wheel">
+  <pose>0 -0.2 0.05 0 0 0</pose>
+  <inertial><mass>0.2</mass></inertial>
+
+  <collision name="collision">
+    <geometry>
+      <cylinder><radius>0.05</radius><length>0.02</length></cylinder>
+    </geometry>
+    <!-- rotate cylinder axis Z -> Y -->
+    <pose>0 0 0 1.5708 0 0</pose>
+  </collision>
+
+  <visual name="visual">
+    <geometry>
+      <cylinder><radius>0.05</radius><length>0.02</length></cylinder>
+    </geometry>
+    <!-- rotate cylinder axis Z -> Y -->
+    <pose>0 0 0 1.5708 0 0</pose>
+    <material><ambient>0.2 0.2 0.2 1</ambient></material>
+  </visual>
+</link>
+
+  <!-- Wheels spin around Y -->
+  <joint name="left_wheel_joint" type="revolute">
+    <parent>chassis</parent>
+    <child>left_wheel</child>
+    <axis><xyz>0 1 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+  </joint>
+  <joint name="right_wheel_joint" type="revolute">
+    <parent>chassis</parent>
+    <child>right_wheel</child>
+    <axis><xyz>0 1 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+  </joint>
+
+  <!-- DiffDrive system plugin -->
+  <plugin filename="/usr/lib/x86_64-linux-gnu/gz-sim-8/plugins/libgz-sim-diff-drive-system.so"
+          name="gz::sim::systems::DiffDrive">
+    <left_joints>left_wheel_joint</left_joints>
+    <right_joints>right_wheel_joint</right_joints>
+    <wheel_separation>0.4</wheel_separation>
+    <wheel_radius>0.05</wheel_radius>
+    <topic>/model/diffdrive_robot/cmd_vel</topic>
+  </plugin>
+</model>
+  </world>
+</sdf>

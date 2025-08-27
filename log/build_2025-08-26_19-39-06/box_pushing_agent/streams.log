@@ -1,0 +1,52 @@
+[1.086s] Invoking command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/src/box_pushing_agent': PYTHONPATH=/home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/box_pushing_agent build --build-base /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build install --record /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/install.log --install-scripts $base/lib/box_pushing_agent --single-version-externally-managed install_data
+[1.205s] /usr/lib/python3/dist-packages/setuptools/dist.py:744: SetuptoolsDeprecationWarning: Invalid dash-separated options
+[1.205s] !!
+[1.206s] 
+[1.206s]         ********************************************************************************
+[1.206s]         Usage of dash-separated 'script-dir' will not be supported in future
+[1.206s]         versions. Please use the underscore name 'script_dir' instead.
+[1.206s] 
+[1.206s]         This deprecation is overdue, please update your project and remove deprecated
+[1.206s]         calls to avoid build errors in the future.
+[1.206s] 
+[1.206s]         See https://setuptools.pypa.io/en/latest/userguide/declarative_config.html for details.
+[1.206s]         ********************************************************************************
+[1.206s] 
+[1.206s] !!
+[1.206s]   opt = self.warn_dash_deprecation(opt, section)
+[1.344s] running egg_info
+[1.344s] creating ../../build/box_pushing_agent/box_pushing_agent.egg-info
+[1.362s] writing ../../build/box_pushing_agent/box_pushing_agent.egg-info/PKG-INFO
+[1.363s] writing dependency_links to ../../build/box_pushing_agent/box_pushing_agent.egg-info/dependency_links.txt
+[1.363s] writing entry points to ../../build/box_pushing_agent/box_pushing_agent.egg-info/entry_points.txt
+[1.363s] writing requirements to ../../build/box_pushing_agent/box_pushing_agent.egg-info/requires.txt
+[1.364s] writing top-level names to ../../build/box_pushing_agent/box_pushing_agent.egg-info/top_level.txt
+[1.364s] writing manifest file '../../build/box_pushing_agent/box_pushing_agent.egg-info/SOURCES.txt'
+[1.401s] reading manifest file '../../build/box_pushing_agent/box_pushing_agent.egg-info/SOURCES.txt'
+[1.402s] writing manifest file '../../build/box_pushing_agent/box_pushing_agent.egg-info/SOURCES.txt'
+[1.402s] running build
+[1.403s] running build_py
+[1.403s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build
+[1.403s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib
+[1.403s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib/box_pushing_agent
+[1.403s] copying box_pushing_agent/__init__.py -> /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib/box_pushing_agent
+[1.403s] copying box_pushing_agent/talker.py -> /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib/box_pushing_agent
+[1.403s] running install
+[1.409s] running install_lib
+[1.429s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent
+[1.429s] copying /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib/box_pushing_agent/__init__.py -> /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent
+[1.429s] copying /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build/lib/box_pushing_agent/talker.py -> /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent
+[1.430s] byte-compiling /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent/__init__.py to __init__.cpython-312.pyc
+[1.430s] byte-compiling /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent/talker.py to talker.cpython-312.pyc
+[1.430s] running install_data
+[1.431s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/share/ament_index
+[1.431s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/share/ament_index/resource_index
+[1.431s] creating /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/share/ament_index/resource_index/packages
+[1.431s] copying resource/box_pushing_agent -> /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/share/ament_index/resource_index/packages
+[1.431s] copying package.xml -> /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/share/box_pushing_agent
+[1.432s] running install_egg_info
+[1.452s] Copying ../../build/box_pushing_agent/box_pushing_agent.egg-info to /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages/box_pushing_agent-0.0.1-py3.12.egg-info
+[1.453s] running install_scripts
+[1.580s] Installing talker script to /home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/box_pushing_agent
+[1.580s] writing list of installed files to '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/install.log'
+[1.604s] Invoked command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/src/box_pushing_agent' returned '0': PYTHONPATH=/home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/julia/ros2_ws/multiagent-deep-RL-sim/install/box_pushing_agent/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/box_pushing_agent build --build-base /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/build install --record /home/julia/ros2_ws/multiagent-deep-RL-sim/build/box_pushing_agent/install.log --install-scripts $base/lib/box_pushing_agent --single-version-externally-managed install_data

@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/box_pushing_agent/box_pushing_agent.egg-info/PKG-INFO
+../../build/box_pushing_agent/box_pushing_agent.egg-info/SOURCES.txt
+../../build/box_pushing_agent/box_pushing_agent.egg-info/dependency_links.txt
+../../build/box_pushing_agent/box_pushing_agent.egg-info/entry_points.txt
+../../build/box_pushing_agent/box_pushing_agent.egg-info/requires.txt
+../../build/box_pushing_agent/box_pushing_agent.egg-info/top_level.txt
+../../build/box_pushing_agent/box_pushing_agent.egg-info/zip-safe
+box_pushing_agent/__init__.py
+box_pushing_agent/talker.py
+resource/box_pushing_agent
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
