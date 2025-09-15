@@ -1,0 +1,1 @@
+/home/julia/ros2_ws/multiagent-deep-RL-sim/build/gazebo_differential_drive_robot/ament_cmake_environment_hooks/local_setup.bash

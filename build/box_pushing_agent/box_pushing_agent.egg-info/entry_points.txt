@@ -1,2 +1,0 @@
-[console_scripts]
-talker = box_pushing_agent.talker:main

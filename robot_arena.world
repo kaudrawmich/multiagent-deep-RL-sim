@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<sdf version="1.10">
+  <world name="robot_arena">
+
+    <!-- Disable GUI grid and set a neutral background -->
+    <scene>
+      <grid>false</grid>
+      <background>0.85 0.85 0.85 1</background>
+    </scene>
+
+    <!-- Sun only (no infinite ground) -->
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+
+    <!-- Finite floor: just inside the walls to avoid z-fighting -->
+    <model name="floor">
+      <pose>0 0 -0.01 0 0 0</pose>  <!-- top surface at z = 0 -->
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0 4.0 0.02</size></box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0 4.0 0.02</size></box>
+          </geometry>
+          <material>
+            <ambient>0.25 0.25 0.25 1</ambient>
+            <diffuse>0.35 0.35 0.35 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Left wall -->
+    <model name="wall_left">
+      <pose>-3.1 0 1.25 0 0 0</pose> <!-- position: x=-3, y=0, z=1.25 -->
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.2 4.0 2.5</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.2 4.0 2.5</size></box> <!-- X  Y  Z -->
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Right wall -->
+    <model name="wall_right">
+      <pose>3.1 0 1.25 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.2 4.0 2.5</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.2 4.0 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Back wall (negative Y) -->
+    <model name="wall_back">
+      <pose>0 -2.1 1.25 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0 0.2 2.5</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0 0.2 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Front wall (positive Y) -->
+    <model name="wall_front">
+      <pose>0 2.1 1.25 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>6.0 0.2 2.5</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>6.0 0.2 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Goal region -->
+    <model name="goal_region">
+      <pose>2.15 0 0.001 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="goal_collision">
+          <geometry>
+          <box><size>1.5 1.0 0.002</size></box>
+          </geometry>
+        </collision>
+        <visual name="goal_visual">
+          <geometry><box><size>1.5 1.0 0.002</size></box></geometry>
+          <material>
+            <ambient>0.05 0.25 0.05 1</ambient>
+            <diffuse>0.10 0.85 0.10 1</diffuse>
+          </material>
+          <transparency>0.35</transparency>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <sensor name="goal_sensor" type="contact">
+          <always_on>true</always_on>
+          <update_rate>20</update_rate>
+          <contact><collision>goal_collision</collision></contact>
+          <visualize>false</visualize>
+        </sensor>
+      </link>
+    </model>
+
+    <!-- Obstacle 1: upper cylinder -->
+    <model name="obstacle_upper">
+      <pose>0.8 0.8 0.5 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.25</radius><length>1.0</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.25</radius><length>1.0</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.25 0.05 0.05 1</ambient>
+            <diffuse>0.85 0.10 0.10 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Obstacle 2: lower cylinder -->
+    <model name="obstacle_lower">
+      <pose>-0.4 -0.8 0.5 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.25</radius><length>1.0</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.25</radius><length>1.0</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.25 0.05 0.05 1</ambient>
+            <diffuse>0.85 0.10 0.10 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

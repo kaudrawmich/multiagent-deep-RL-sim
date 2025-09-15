@@ -1,6 +1,0 @@
-source;share/box_pushing_agent/hook/pythonpath.ps1
-source;share/box_pushing_agent/hook/pythonpath.dsv
-source;share/box_pushing_agent/hook/pythonpath.sh
-source;share/box_pushing_agent/hook/ament_prefix_path.ps1
-source;share/box_pushing_agent/hook/ament_prefix_path.dsv
-source;share/box_pushing_agent/hook/ament_prefix_path.sh
