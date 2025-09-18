@@ -205,11 +205,13 @@
         </visual>
       </link>
     </model>
-    <!-- Pushable boxes (0.5 m cube, 5.0 kg) -->
+
+    <!-- Pushable box (0.5 m cube, 5.0 kg) -->
     <include>
       <uri>model://push_box</uri>
-      <name><push_box></name>
+      <name>push_box</name>
       <pose>-2.4 0 0.25 0 0 0</pose>
     </include>
+
   </world>
 </sdf>
