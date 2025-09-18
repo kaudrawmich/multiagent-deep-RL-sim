@@ -8,6 +8,9 @@
       <background>0.85 0.85 0.85 1</background>
     </scene>
 
+    <!-- World level gravity -->
+    <gravity>0 0 -9.81</gravity>
+
     <!-- Sun only (no infinite ground) -->
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
@@ -202,6 +205,11 @@
         </visual>
       </link>
     </model>
-
+    <!-- Pushable boxes (0.5 m cube, 5.0 kg) -->
+    <include>
+      <uri>model://push_box</uri>
+      <name><push_box></name>
+      <pose>-2.4 0 0.25 0 0 0</pose>
+    </include>
   </world>
 </sdf>
