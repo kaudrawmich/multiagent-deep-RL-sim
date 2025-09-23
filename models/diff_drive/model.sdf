@@ -81,7 +81,7 @@
             <izz>0.0005025</izz>
             <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
             </inertia>
-        </intertial>
+        </inertial>
 
         <collision name="wheel_col">
             <pose>0 0 0 1.57079632679 0 0</pose>
