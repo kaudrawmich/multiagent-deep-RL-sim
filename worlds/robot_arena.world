@@ -12,9 +12,18 @@
     <gravity>0 0 -9.81</gravity>
 
     <!-- Sun only (no infinite ground) -->
-    <include>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
-    </include>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <diffuse> 1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>1</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
 
     <!-- Finite floor: just inside the walls to avoid z-fighting -->
     <model name="floor">
