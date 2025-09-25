@@ -1,13 +1,35 @@
-# ROS 2 <-> Gazebo topic bridges
-
-- ros_topic_name: /cmd_vel
-  gz_topic_name: /model/diffdrive_robot/cmd_vel
+# bridge/robot_bridge.yaml
+- topic_name: /model/robot_1/cmd_vel
   ros_type_name: geometry_msgs/msg/Twist
   gz_type_name: gz.msgs.Twist
   direction: ROS_TO_GZ
 
-- ros_topic_name: /clock
-  gz_topic_name: /clock
+- topic_name: /model/robot_1/odometry
+  ros_type_name: nav_msgs/msg/Odometry
+  gz_type_name: gz.msgs.Odometry
+  direction: GZ_TO_ROS
+
+- topic_name: /model/robot_1/imu
+  ros_type_name: sensor_msgs/msg/Imu
+  gz_type_name: gz.msgs.IMU
+  direction: GZ_TO_ROS
+
+- topic_name: /model/robot_1/pusher_contact
+  ros_type_name: ros_gz_interfaces/msg/Contacts
+  gz_type_name: gz.msgs.Contacts
+  direction: GZ_TO_ROS
+
+- topic_name: /model/robot_1/pose
+  ros_type_name: geometry_msgs/msg/Pose
+  gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
+
+- topic_name: /model/push_box/pose
+  ros_type_name: geometry_msgs/msg/Pose
+  gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
+
+- topic_name: /clock
   ros_type_name: rosgraph_msgs/msg/Clock
   gz_type_name: gz.msgs.Clock
   direction: GZ_TO_ROS
