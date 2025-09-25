@@ -199,13 +199,13 @@
 
     <!-- Optional: wheel slip reporting (set low compliance for grippy wheels) -->
     <plugin filename="gz-sim-wheel-slip-system" name="gz::sim::systems::WheelSlip">
-      <wheel>
-        <link_name>left_wheel</link_name>
+      <wheel link_name="left_wheel" collision_name="wheel_col">
+        <wheel_radius>0.08</wheel_radius>
         <slip_compliance_lateral>0.0</slip_compliance_lateral>
         <slip_compliance_longitudinal>0.0</slip_compliance_longitudinal>
       </wheel>
-      <wheel>
-        <link_name>right_wheel</link_name>
+      <wheel link_name="right_wheel" collision_name="wheel_col">
+        <wheel_radius>0.08</wheel_radius>
         <slip_compliance_lateral>0.0</slip_compliance_lateral>
         <slip_compliance_longitudinal>0.0</slip_compliance_longitudinal>
       </wheel>
