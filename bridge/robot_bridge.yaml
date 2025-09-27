@@ -33,3 +33,18 @@
   ros_type_name: rosgraph_msgs/msg/Clock
   gz_type_name: gz.msgs.Clock
   direction: GZ_TO_ROS
+
+- topic_name: /model/goal_region/pose
+  ros_type_name: geometry_msgs/msg/Pose
+  gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
+
+- topic_name: /model/obstacle_upper/pose
+  ros_type_name: geometry_msgs/msg/Pose
+  gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
+
+- topic_name: /model/obstacle_lower/pose
+  ros_type_name: geometry_msgs/msg/Pose
+  gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
