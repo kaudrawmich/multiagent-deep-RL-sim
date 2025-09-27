@@ -40,7 +40,7 @@
         <always_on>true</always_on>
         <update_rate>100</update_rate>
         <visualize>false</visualize>
-        <topic>/model/diff_drive/imu</topic>
+        <topic>imu</topic>
       </sensor>
     </link>
 
@@ -188,14 +188,15 @@
       <wheel_separation>0.30</wheel_separation>
       <wheel_radius>0.08</wheel_radius>
       <odom_frame>odom</odom_frame>
-      <topic>/model/diff_drive/cmd_vel</topic>
-      <odom_topic>/model/diff_drive/odometry</odom_topic>
+      <topic>cmd_vel</topic>
+      <odom_topic>odometry</odom_topic>
       <max_torque>6.0</max_torque>
     </plugin>
 
     <!-- Publish joint states (wheel encoders proxy) -->
     <plugin filename="gz-sim-joint-state-publisher-system"
-            name="gz::sim::systems::JointStatePublisher"/>
+        name="gz::sim::systems::JointStatePublisher">
+    </plugin>
 
     <!-- Optional: wheel slip reporting (set low compliance for grippy wheels)
     <plugin filename="gz-sim-wheel-slip-system" name="gz::sim::systems::WheelSlip">
