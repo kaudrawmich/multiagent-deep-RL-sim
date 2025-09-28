@@ -40,14 +40,14 @@ class ArenaProbe(Node):
         self.declare_parameter('nudge_duration', 2.0)# seconds
 
         # --- publishers
-        self.cmd_pub = self.create_publisher(Twist, '/model/robot_1/cmd_vel', 10)
+        self.cmd_pub = self.create_publisher(Twist, '/model/diff_drive/cmd_vel', 10)
 
         # --- subscribers
-        self.create_subscription(Odometry, '/model/robot_1/odometry', self.cb_odom, 10)
-        self.create_subscription(Imu, '/model/robot_1/imu', self.cb_imu, 10)
-        self.create_subscription(Contacts, '/model/robot_1/pusher_contact', self.cb_contacts, 10)
+        self.create_subscription(Odometry, '/model/diff_drive/odometry', self.cb_odom, 10)
+        self.create_subscription(Imu, '/model/diff_drive/imu', self.cb_imu, 10)
+        self.create_subscription(Contacts, '/model/diff_drive/pusher_contact', self.cb_contacts, 10)
 
-        self.create_subscription(Pose, '/model/robot_1/pose', self.cb_robot_pose, 10)
+        self.create_subscription(Pose, '/model/diff_drive/pose', self.cb_robot_pose, 10)
         self.create_subscription(Pose, '/model/push_box/pose', self.cb_box_pose, 10)
         self.create_subscription(Pose, '/model/goal_region/pose', self.cb_goal_pose, 10)
         self.create_subscription(Pose, '/model/obstacle_upper/pose', self.cb_obs1_pose, 10)

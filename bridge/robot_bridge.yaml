@@ -1,25 +1,29 @@
 # bridge/robot_bridge.yaml
-- topic_name: /model/robot_1/cmd_vel
+# ROS -> GZ (drive)
+- topic_name: /model/diff_drive/cmd_vel
   ros_type_name: geometry_msgs/msg/Twist
   gz_type_name: gz.msgs.Twist
   direction: ROS_TO_GZ
 
-- topic_name: /model/robot_1/odometry
+# GZ -> ROS
+- topic_name: /model/diff_drive/odometry
   ros_type_name: nav_msgs/msg/Odometry
   gz_type_name: gz.msgs.Odometry
   direction: GZ_TO_ROS
 
-- topic_name: /model/robot_1/imu
+# Find the IMU sensor topic
+- topic_name: /world/robot_arena/model/diff_drive/link/chassis/sensor/imu/imu
   ros_type_name: sensor_msgs/msg/Imu
   gz_type_name: gz.msgs.IMU
   direction: GZ_TO_ROS
 
-- topic_name: /model/robot_1/pusher_contact
+# Contact sensors
+- topic_name: /model/diff_drive/pusher_contact
   ros_type_name: ros_gz_interfaces/msg/Contacts
   gz_type_name: gz.msgs.Contacts
   direction: GZ_TO_ROS
 
-- topic_name: /model/robot_1/pose
+- topic_name: /model/diff_drive/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
@@ -27,11 +31,6 @@
 - topic_name: /model/push_box/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
-  direction: GZ_TO_ROS
-
-- topic_name: /clock
-  ros_type_name: rosgraph_msgs/msg/Clock
-  gz_type_name: gz.msgs.Clock
   direction: GZ_TO_ROS
 
 - topic_name: /model/goal_region/pose
@@ -47,4 +46,9 @@
 - topic_name: /model/obstacle_lower/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
+  direction: GZ_TO_ROS
+
+- topic_name: /clock
+  ros_type_name: rosgraph_msgs/msg/Clock
+  gz_type_name: gz.msgs.Clock
   direction: GZ_TO_ROS

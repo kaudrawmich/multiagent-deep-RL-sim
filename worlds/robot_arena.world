@@ -11,6 +11,11 @@
     <!-- World level gravity -->
     <gravity>0 0 -9.81</gravity>
 
+    <!-- Enable all sensors in this world -->
+    <plugin filename="gz-sim-sensors-system" 
+            name="gz::sim::systems::Sensors">
+    </plugin>
+
     <!-- Sun only (no infinite ground) -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
@@ -240,13 +245,13 @@
     <include>
       <uri>model://push_box</uri>
       <name>push_box</name>
-      <pose>-2.4 0 0.25 0 0 0</pose>
+      <pose>-2.2 0 0.25 0 0 0</pose>
     </include>
 
     <!-- Robot -->
     <include>
       <uri>model://diff_drive</uri>
-      <name>robot_1</name>
+      <name>diff_drive</name>
       <pose>-2.855 0 0 0 0 0</pose>
     </include>
   </world>
