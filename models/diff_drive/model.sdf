@@ -8,7 +8,7 @@
     <!-- ================== CHASSIS =================== -->
     <!-- Base: L=0.35m x W=0.30m x H=0.12m, mass=0.3 kg -->
     <link name="chassis">
-      <pose>0 0 0.14 0 0 0</pose>
+      <pose>0 0 0.06 0 0 0</pose>
       <inertial>
         <mass>4.5</mass>
         <!-- Box inertia: Ixx=(1/12)m(y^2+z^2), etc. -->
@@ -46,7 +46,7 @@
 
     <!-- ================== LEFT WHEEL =================== -->
     <link name="left_wheel">
-        <pose>0 0.15 0.08 1.57079632679 0 0</pose>
+        <pose>0 0.15 0.08 0 0 0</pose>
         <inertial>
             <mass>0.3</mass>
             <!-- Solid cylinder (axis=Y): Iyy=0.5*m*r^2; Ixx=Izz=(1/12)*m*(3r^2+L^2) -->
@@ -70,7 +70,7 @@
 
     <!-- ================== RIGHT WHEEL =================== -->
     <link name="right_wheel">
-        <pose>0 -0.15 0.08 1.57079632679 0 0</pose>
+        <pose>0 -0.15 0.08 0 0 0</pose>
         <inertial>
             <mass>0.3</mass>
             <inertia>
@@ -117,7 +117,7 @@
     <!-- ================== PUSHER =================== -->
     <!-- Thickness 0.02m, width 0.28m, height 0.11m, mass 0.5kg -->
     <link name="pusher">
-        <pose>0.185 0 0.06 0 0 0</pose>
+        <pose>0.185 0 0.12 0 0 0</pose>
         <inertial>
             <mass>0.5</mass>
             <inertia>
