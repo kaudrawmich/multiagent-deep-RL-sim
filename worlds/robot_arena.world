@@ -12,9 +12,18 @@
     <gravity>0 0 -9.81</gravity>
 
     <!-- Enable all sensors in this world -->
-    <plugin filename="gz-sim-sensors-system" 
-            name="gz::sim::systems::Sensors">
-    </plugin>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+
+    <!-- Physics engine settings -->
+    <physics name="ode-default" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
 
     <!-- Sun only (no infinite ground) -->
     <light type="directional" name="sun">
@@ -252,7 +261,7 @@
     <include>
       <uri>model://diff_drive</uri>
       <name>diff_drive</name>
-      <pose>-2.855 0 0.12 0 0 0</pose>
+      <pose>-2.8 0 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
