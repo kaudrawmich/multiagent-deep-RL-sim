@@ -1,0 +1,99 @@
+[0.741s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--base-paths', '/home/julia/ros2_ws/multiagent-deep-RL-sim', '--packages-select', 'multiagent_deep_rl_sim', '--symlink-install', '--event-handlers', 'console_direct+']
+[0.742s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=['console_direct+'], ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/julia/ros2_ws/multiagent-deep-RL-sim'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['multiagent_deep_rl_sim'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7763c2a470b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7763c2b8fa70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7763c2b8fa70>>)
+[0.924s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.925s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.925s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/julia/ros2_ws/multiagent-deep-RL-sim'
+[0.925s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extensions ['ignore', 'ignore_ament_install']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extension 'ignore'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extension 'ignore_ament_install'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extensions ['colcon_pkg']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extension 'colcon_pkg'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extensions ['colcon_meta']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extension 'colcon_meta'
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extensions ['ros']
+[0.927s] Level 1:colcon.colcon_core.package_identification:_identify(/home/julia/ros2_ws/multiagent-deep-RL-sim) by extension 'ros'
+[1.051s] DEBUG:colcon.colcon_core.package_identification:Package '/home/julia/ros2_ws/multiagent-deep-RL-sim' with type 'ros.ament_cmake' and name 'multiagent_deep_rl_sim'
+[1.052s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.137s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.138s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.149s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/julia/ros2_ws/multiagent-deep-RL-sim/install
+[1.153s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 317 installed packages in /opt/ros/jazzy
+[1.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_args' from command line to 'None'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_target' from command line to 'None'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_clean_first' from command line to 'False'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'cmake_force_configure' from command line to 'False'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'ament_cmake_args' from command line to 'None'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[1.264s] Level 5:colcon.colcon_core.verb:set package 'multiagent_deep_rl_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.264s] DEBUG:colcon.colcon_core.verb:Building package 'multiagent_deep_rl_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim', 'merge_install': False, 'path': '/home/julia/ros2_ws/multiagent-deep-RL-sim', 'symlink_install': True, 'test_result_base': None}
+[1.265s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.267s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.267s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/julia/ros2_ws/multiagent-deep-RL-sim' with build type 'ament_cmake'
+[1.268s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/julia/ros2_ws/multiagent-deep-RL-sim'
+[1.279s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.279s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.280s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.312s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim -- -j12 -l12
+[1.570s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim -- -j12 -l12
+[1.602s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+[1.696s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multiagent_deep_rl_sim)
+[1.698s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+[1.720s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim' for CMake module files
+[1.723s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim' for CMake config files
+[1.734s] Level 1:colcon.colcon_core.shell:create_environment_hook('multiagent_deep_rl_sim', 'cmake_prefix_path')
+[1.734s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.ps1'
+[1.739s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.dsv'
+[1.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.sh'
+[1.745s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/bin'
+[1.745s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/pkgconfig/multiagent_deep_rl_sim.pc'
+[1.746s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/python3.12/site-packages'
+[1.747s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/bin'
+[1.749s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.ps1'
+[1.751s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.dsv'
+[1.758s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.sh'
+[1.762s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.bash'
+[1.765s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.zsh'
+[1.768s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/colcon-core/packages/multiagent_deep_rl_sim)
+[1.770s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(multiagent_deep_rl_sim)
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim' for CMake module files
+[1.774s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim' for CMake config files
+[1.777s] Level 1:colcon.colcon_core.shell:create_environment_hook('multiagent_deep_rl_sim', 'cmake_prefix_path')
+[1.778s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.ps1'
+[1.779s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.dsv'
+[1.780s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/hook/cmake_prefix_path.sh'
+[1.782s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/bin'
+[1.783s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/pkgconfig/multiagent_deep_rl_sim.pc'
+[1.784s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/python3.12/site-packages'
+[1.785s] Level 1:colcon.colcon_core.environment:checking '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/bin'
+[1.786s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.ps1'
+[1.789s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.dsv'
+[1.791s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.sh'
+[1.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.bash'
+[1.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.zsh'
+[1.797s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/colcon-core/packages/multiagent_deep_rl_sim)
+[1.798s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.800s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.800s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.800s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.901s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.901s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.902s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.902s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.905s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[1.906s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.906s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/local_setup.ps1'
+[1.909s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/_local_setup_util_ps1.py'
+[1.912s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/setup.ps1'
+[1.916s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/local_setup.sh'
+[1.918s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/_local_setup_util_sh.py'
+[1.920s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/setup.sh'
+[1.924s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/local_setup.bash'
+[1.926s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/setup.bash'
+[1.929s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/local_setup.zsh'
+[1.932s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/julia/ros2_ws/multiagent-deep-RL-sim/install/setup.zsh'

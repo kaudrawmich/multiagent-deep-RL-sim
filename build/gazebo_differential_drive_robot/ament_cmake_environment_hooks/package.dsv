@@ -1,4 +1,0 @@
-source;share/gazebo_differential_drive_robot/local_setup.bash
-source;share/gazebo_differential_drive_robot/local_setup.dsv
-source;share/gazebo_differential_drive_robot/local_setup.sh
-source;share/gazebo_differential_drive_robot/local_setup.zsh

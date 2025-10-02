@@ -7,7 +7,7 @@
     <!-- ================== CHASSIS =================== -->
     <!-- Base: L=0.35m x W=0.30m x H=0.12m, mass=0.3 kg -->
     <link name="chassis">
-      <pose>0 0 0.06 0 0 0</pose>
+      <pose>0 0 0.16 0 0 0</pose>
       <inertial>
         <mass>4.5</mass>
         <!-- Box inertia: Ixx=(1/12)m(y^2+z^2), etc. -->
@@ -45,7 +45,7 @@
 
     <!-- ================== LEFT WHEEL =================== -->
     <link name="left_wheel">
-        <pose>-0.08 0.165 0.08 1.5708 0 0</pose>
+        <pose>-0.08 0.165 0.08 1.57079632679 0 0</pose>
         <inertial>
             <mass>0.3</mass>
             <!-- Solid cylinder (axis=Y): Iyy=0.5*m*r^2; Ixx=Izz=(1/12)*m*(3r^2+L^2) -->
@@ -69,7 +69,7 @@
 
     <!-- ================== RIGHT WHEEL =================== -->
     <link name="right_wheel">
-        <pose>-0.08 -0.165 0.08 1.5708 0 0</pose>
+        <pose>-0.08 -0.165 0.08 1.57079632679 0 0</pose>
         <inertial>
             <mass>0.3</mass>
             <inertia>
@@ -92,7 +92,7 @@
 
     <!-- ================== CASTER =================== -->
     <link name="caster">
-        <pose>-0.15 0 0.05 0 0 0</pose> <!-- rear & low -->
+        <pose>-0.16 0 0.05 0 0 0</pose>
         <inertial>
             <mass>0.2</mass>
             <!-- Solid sphere: I = (2/5) m r^2 -->
@@ -104,11 +104,14 @@
             </inertia>
       </inertial>
       <collision name="caster_col">
-        <geometry><sphere><radius>0.04</radius></sphere></geometry>
-        <surface><friction><ode><mu>0.6</mu><mu2>0.6</mu2></ode></friction></surface>
+        <geometry><sphere><radius>0.05</radius></sphere></geometry>
+        <surface>
+        <contact><ode><kp>2e6</kp><kd>1</kd></ode></contact>
+        <friction><ode><mu>0.1</mu><mu2>0.1</mu2></ode></friction>
+        </surface>
       </collision>
       <visual name="caster_vis">
-        <geometry><sphere><radius>0.03</radius></sphere></geometry>
+        <geometry><sphere><radius>0.05</radius></sphere></geometry>
         <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
       </visual>
     </link>
@@ -169,6 +172,7 @@
     <joint name="caster_joint" type="ball">
         <parent>chassis</parent>
         <child>caster</child>
+        <pose>-0.16 0 0.05 0 0 0</pose>
     </joint>
 
     <joint name="pusher_fixed" type="fixed">
@@ -180,7 +184,7 @@
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
       <left_joints>left_wheel_joint</left_joints>
       <right_joints>right_wheel_joint</right_joints>
-      <wheel_separation>0.30</wheel_separation>
+      <wheel_separation>0.33</wheel_separation>
       <wheel_radius>0.08</wheel_radius>
       <odom_frame>odom</odom_frame>
       <topic>cmd_vel</topic>

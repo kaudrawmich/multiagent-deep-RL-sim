@@ -1,0 +1,1 @@
+/home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim/ament_cmake_environment_hooks/local_setup.zsh

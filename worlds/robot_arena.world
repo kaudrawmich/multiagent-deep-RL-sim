@@ -257,11 +257,11 @@
       <pose>-2.2 0 0.25 0 0 0</pose>
     </include>
 
-    <!-- Robot -->
+    <!--
     <include>
       <uri>model://diff_drive</uri>
       <name>diff_drive</name>
-      <pose>-2.8 0 0 0 0 0</pose>
-    </include>
+      <pose>-2.8 0 0.20 0 0 0</pose>
+    </include>-->
   </world>
 </sdf>

@@ -1,0 +1,43 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done (3.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/julia/ros2_ws/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/worlds/robot_arena.world
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/model.config
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/model.sdf
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.gazebo
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.xacro
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.config
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.sdf
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/bridge/robot_bridge.yaml
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/package_run_dependencies/multiagent_deep_rl_sim
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/parent_prefix_path/multiagent_deep_rl_sim
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.sh
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.dsv
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.sh
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.dsv
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.bash
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.sh
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.zsh
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.dsv
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.dsv
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/packages/multiagent_deep_rl_sim
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig.cmake
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig-version.cmake
+-- Symlinking: /home/julia/ros2_ws/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.xml
