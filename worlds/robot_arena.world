@@ -162,13 +162,10 @@
       <pose>2.15 0 0.001 0 0 0</pose>
       <static>true</static>
       <link name="link">
-        <collision name="goal_collision">
-          <geometry>
-          <box><size>1.5 1.0 0.002</size></box>
-          </geometry>
-        </collision>
         <visual name="goal_visual">
-          <geometry><box><size>1.5 1.0 0.002</size></box></geometry>
+          <geometry>
+            <box><size>1.5 1.0 0.002</size></box>
+          </geometry>
           <material>
             <ambient>0.05 0.25 0.05 1</ambient>
             <diffuse>0.10 0.85 0.10 1</diffuse>
@@ -176,6 +173,22 @@
           <transparency>0.35</transparency>
           <cast_shadows>false</cast_shadows>
         </visual>
+
+        <!-- Collision for sensor -->
+        <collision name="goal_collision">
+          <pose>0 0 -0.001 0 0 0</pose>
+          <geometry>
+            <box><size>1.5 1.0 0.002</size></box>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_without_contact>true</collide_without_contact>
+              <collide_bitmask>0xFFFF</collide_bitmask>
+            </contact>
+          </surface>
+        </collision>
+
+        <!-- Contact sensor -->
         <sensor name="goal_sensor" type="contact">
           <always_on>true</always_on>
           <update_rate>20</update_rate>
@@ -257,11 +270,5 @@
       <pose>-2.2 0 0.25 0 0 0</pose>
     </include>
 
-    <!--
-    <include>
-      <uri>model://diff_drive</uri>
-      <name>diff_drive</name>
-      <pose>-2.8 0 0.20 0 0 0</pose>
-    </include>-->
   </world>
 </sdf>

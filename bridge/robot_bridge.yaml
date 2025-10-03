@@ -12,16 +12,10 @@
   direction: GZ_TO_ROS
 
 # Find the IMU sensor topic
-#- topic_name: /world/robot_arena/model/diff_drive/link/chassis/sensor/imu/imu
-#  ros_type_name: sensor_msgs/msg/Imu
-#  gz_type_name: gz.msgs.IMU
-#  direction: GZ_TO_ROS
-
-# Contact sensors
-#- topic_name: /model/diff_drive/pusher_contact
-#  ros_type_name: ros_gz_interfaces/msg/Contacts
-#  gz_type_name: gz.msgs.Contacts
-#  direction: GZ_TO_ROS
+- topic_name: /model/diff_drive/imu
+  ros_type_name: sensor_msgs/msg/Imu
+  gz_type_name: gz.msgs.IMU
+  direction: GZ_TO_ROS
 
 - topic_name: /joint_states
   ros_type_name: sensor_msgs/msg/JointState
@@ -51,11 +45,6 @@
 - topic_name: /model/obstacle_lower/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
-  direction: GZ_TO_ROS
-
-- topic_name: /tf
-  ros_type_name: tf2_msgs/msg/TFMessage
-  gz_type_name: gz.msgs.Pose_V
   direction: GZ_TO_ROS
 
 - topic_name: /clock

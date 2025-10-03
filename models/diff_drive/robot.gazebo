@@ -5,45 +5,51 @@
 <gazebo reference="body_link">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Purple</material>
+    <sensor name="imu" type="imu">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <imu>
+            <topic>imu</topic>
+        </imu>
+    </sensor>
 </gazebo>
 
 <gazebo reference="wheel1_link">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Gray</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Black</material>
 </gazebo>
 
 <gazebo reference="wheel2_link">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Gray</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <material>Gazebo/Black</material>
 </gazebo>
 
 <gazebo reference="caster_link">
     <mu1>0.000002</mu1>
     <mu2>0.000002</mu2>
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/Black</material>
 </gazebo>
 
 <!-- ============================== CONTROLLER ================================ -->
 <gazebo>
 <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
 
-    <!-- wheels -->
+    <!-- Wheels -->
         <right_joint>wheel1_joint</right_joint>
         <left_joint>wheel2_joint</left_joint>
         
-    <!-- kinematics -->
+    <!-- Kinematics -->
         <wheel_separation>${2*s4}</wheel_separation>
         <wheel_diameter>${2*r}</wheel_diameter>
 
-    <!-- limits -->
+    <!-- Limits -->
         <max_linear_acceleration>10</max_linear_acceleration> 
     
-    <!-- topic, frames, and odometry -->
+    <!-- Topic, frames, and odometry -->
         <topic>cmd_vel</topic> 
-        <tf_topic>/tf</tf_topic> 
         <odom_topic>odometry</odom_topic> 
         <frame_id>odometry</frame_id> 
         <child_frame_id>base_footprint </child_frame_id> 
@@ -51,12 +57,25 @@
         
 </plugin>
 
-<!-- Joint state publisher                               -->
+<!-- Joint state publisher -->
 <plugin filename="gz-sim-joint-state-publisher-system"
   name="gz::sim::systems::JointStatePublisher">
     <topic>joint_states</topic> <!--from <ros><remapping> -->
     <joint_name>wheel1_joint</joint_name>
     <joint_name>wheel2_joint</joint_name>
+</plugin>
+
+<!-- Pose publisher -->
+<plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+  <publish_model_pose>true</publish_model_pose>
+  <publish_link_pose>false</publish_link_pose>
+  <update_frequency>30</update_frequency>
+</plugin>
+
+<!-- IMU system plugin -->
+<plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu">
+  <parent_link>body_link</parent_link>
+  <topic>imu</topic>
 </plugin>
 
 </gazebo> 
