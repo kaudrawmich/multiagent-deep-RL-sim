@@ -70,6 +70,22 @@ def generate_launch_description():
         output='screen',
     )
 
+    # Spawn box from its SDF file
+    box_sdf = os.path.join(pkg_share, 'models', 'push_box', 'model.sdf')
+    spawnBoxNodeGazebo = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=['-name', 'push_box',
+                   '-file', box_sdf,
+                   '-x', '-2.0',
+                   '-y', '0.0',
+                   '-z', '0.40',
+                   '-R', '0.0',
+                   '-P', '0.0',
+                   '-Y', '0.0'],
+        output='screen',
+    )
+
     # Publish robot state
     nodeRobotStatePublisher = Node(
         package='robot_state_publisher',

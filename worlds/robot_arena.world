@@ -265,12 +265,5 @@
       </plugin>
     </model>
 
-    <!-- Pushable box (0.8 m cube, 7.5 kg) -->
-    <include>
-      <uri>model://push_box</uri>
-      <name>push_box</name>
-      <pose>-2.0 0 0.40 0 0 0</pose>
-    </include>
-
   </world>
 </sdf>
