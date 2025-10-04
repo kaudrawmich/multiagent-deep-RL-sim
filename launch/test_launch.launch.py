@@ -59,7 +59,14 @@ def generate_launch_description():
     spawnModelNodeGazebo = Node(
         package='ros_gz_sim',
         executable='create',
-        arguments=['-name', robotXacroName, '-topic', 'robot_description'],
+        arguments=['-name', robotXacroName, 
+                   '-topic', 'robot_description',
+                   '-x', '-2.7',
+                   '-y', '0.0',
+                   '-z', '0.00',
+                   '-R', '0.0',
+                   '-P', '0.0',
+                   '-Y', '0.0'],
         output='screen',
     )
 
