@@ -238,7 +238,7 @@
 
     <!-- Obstacle 2: lower cylinder -->
     <model name="obstacle_lower">
-      <pose>-0.1 -0.5 0.5 0 0 0</pose>
+      <pose>-0.1 -0.6 0.5 0 0 0</pose>
       <static>true</static>
       <link name="link">
         <collision name="collision">
