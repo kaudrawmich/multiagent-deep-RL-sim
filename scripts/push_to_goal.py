@@ -63,9 +63,14 @@ class PushToGoal(Node):
         self.imu_msg = None
         self._logged_wait = False
 
-        self.create_subscription(Pose, '/model/push_box/pose', self.on_box_pose, 10)
-        self.create_subscription(Odometry, '/model/diff_drive/odometry', self.on_odom, 10)
-        self.create_subscription(Imu, '/model/diff_drive/imu', self.on_imu, 10)
+        # Seen flags
+        self._seen_box = False
+        self._seen_odom = False
+        self._seen_imu = False
+
+        self.create_subscription(Pose, self.box_pose_topic, self.on_box_pose, 10)
+        self.create_subscription(Odometry, self.odom_topic, self.on_odom, 10)
+        self.create_subscription(Imu, self.imu_topic, self.on_imu, 10)
 
         # Control loop @ 20 Hz
         self.timer = self.create_timer(0.05, self.control_step)
@@ -88,12 +93,21 @@ class PushToGoal(Node):
     # --- Callbacks ---
     def on_box_pose(self, msg: Pose):
         self.box_pose = msg
+        if not self._seen_box:
+            self._seen_box = True
+            self.get_logger().info('Received first box pose message.')
 
     def on_odom(self, msg: Odometry):
         self.robot_odom = msg
+        if not self._seen_odom:
+            self._seen_odom = True
+            self.get_logger().info('Received first odometry message.')
 
     def on_imu(self, msg: Imu):
         self.imu_msg = msg
+        if not self._seen_imu:
+            self._seen_imu = True
+            self.get_logger().info('Received first IMU message.')
 
     # --- Geometry check: box fully inside goal ---
     def box_fully_in_goal(self):
