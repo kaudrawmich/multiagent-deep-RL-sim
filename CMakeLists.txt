@@ -22,4 +22,8 @@ install(DIRECTORY bridge/
   DESTINATION share/${PROJECT_NAME}/bridge
 )
 
+install(DIRECTORY scripts/
+  DESTINATION lib/${PROJECT_NAME}
+  USE_SOURCE_PERMISSIONS)
+
 ament_package()

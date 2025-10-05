@@ -6,7 +6,8 @@
 			"_install",
 			"install",
 			"include",
-			"find_package"
+			"find_package",
+			"ament_cmake_symlink_install_directory"
 		],
 		"files" : 
 		[
@@ -15,7 +16,8 @@
 			"/opt/ros/jazzy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake",
 			"/opt/ros/jazzy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake",
 			"/opt/ros/jazzy/share/ament_cmake/cmake/ament_cmakeConfig.cmake",
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"/opt/ros/jazzy/share/ament_cmake_core/cmake/symlink_install/ament_cmake_symlink_install_directory.cmake"
 		],
 		"nodes" : 
 		[
@@ -73,6 +75,24 @@
 				"file" : 0,
 				"line" : 43,
 				"parent" : 9
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 11
+			},
+			{
+				"command" : 0,
+				"file" : 6,
+				"line" : 43,
+				"parent" : 12
 			}
 		]
 	},
@@ -83,6 +103,19 @@
 			"component" : "Unspecified",
 			"scriptFile" : "build/multiagent_deep_rl_sim/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake",
 			"type" : "script"
+		},
+		{
+			"backtrace" : 13,
+			"component" : "Unspecified",
+			"destination" : "lib/multiagent_deep_rl_sim",
+			"paths" : 
+			[
+				{
+					"from" : "scripts",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
 		}
 	],
 	"paths" : 

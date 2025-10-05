@@ -1,6 +1,6 @@
 # bridge/robot_bridge.yaml
 # ROS -> GZ (drive)
-- topic_name: /cmd_vel
+- topic_name: /model/diff_drive/cmd_vel
   ros_type_name: geometry_msgs/msg/Twist
   gz_type_name: gz.msgs.Twist
   direction: ROS_TO_GZ

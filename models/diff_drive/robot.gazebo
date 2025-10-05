@@ -6,13 +6,6 @@
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <material>Gazebo/Purple</material>
-    <sensor name="imu" type="imu">
-        <always_on>true</always_on>
-        <update_rate>100</update_rate>
-        <imu>
-            <topic>imu</topic>
-        </imu>
-    </sensor>
 </gazebo>
 
 <gazebo reference="wheel1_link">
@@ -49,7 +42,7 @@
         <max_linear_acceleration>10</max_linear_acceleration> 
     
     <!-- Topic, frames, and odometry -->
-        <topic>cmd_vel</topic> 
+        <topic>/model/diff_drive/cmd_vel</topic> 
         <odom_topic>odometry</odom_topic> 
         <frame_id>odometry</frame_id> 
         <child_frame_id>base_footprint </child_frame_id> 

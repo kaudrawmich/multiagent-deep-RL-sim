@@ -182,10 +182,15 @@
           </geometry>
           <surface>
             <contact>
-              <collide_without_contact>true</collide_without_contact>
-              <soft_cfm>1e-9</soft_cfm>
-              <soft_erp>0</soft_erp>
+              <ode>
+                <soft_cfm>1e-9</soft_cfm>
+                <soft_erp>0</soft_erp>
+              </ode>
             </contact>
+            <bounce>
+              <restitution_coefficient>0.0</restitution_coefficient>
+              <threshold>1e-3</threshold>
+            </bounce>
             <friction><ode><mu>0.0</mu><mu2>0.0</mu2></ode></friction>
           </surface>
         </collision>

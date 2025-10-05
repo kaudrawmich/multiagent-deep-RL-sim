@@ -103,11 +103,20 @@ def generate_launch_description():
         output='screen',
     )
 
+    controller = Node(
+        package=namePackage,
+        executable='push_to_goal.py',
+        name='push_to_goal',
+        output='screen'
+    )
+
     ld = LaunchDescription()
     ld.add_action(set_gz)
     ld.add_action(set_ign)
     ld.add_action(gazeboLaunch)
     ld.add_action(spawnModelNodeGazebo)
+    ld.add_action(spawnBoxNodeGazebo)
     ld.add_action(nodeRobotStatePublisher)
     ld.add_action(start_gazebo_ros_bridge_cmd)
+    ld.add_action(controller)
     return ld

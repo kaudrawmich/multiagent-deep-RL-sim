@@ -1,1 +1,1 @@
-xacro;robot_state_publisher;joint_state_publisher;ros_gz_sim;ros_gz_bridge;joint_state_publisher_gui
+xacro;robot_state_publisher;joint_state_publisher;ros_gz_sim;ros_gz_bridge;joint_state_publisher_gui;rclpy;geometry_msgs;nav_msgs;sensor_msgs
