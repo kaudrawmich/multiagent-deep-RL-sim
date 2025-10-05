@@ -1,9 +1,10 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable, DeclareLaunchArgument
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import EnvironmentVariable, TextSubstitution
+from launch.substitutions import EnvironmentVariable, TextSubstitution, LaunchConfiguration
 from launch_ros.actions import Node
 import xacro
 
@@ -17,6 +18,9 @@ def generate_launch_description():
     pkg_share = get_package_share_directory(namePackage)
     pathModelFile = os.path.join(pkg_share, model_rel)
     pathWorldFile = os.path.join(pkg_share, world_rel)
+
+    # Start the controller
+    start_controller_arg = DeclareLaunchArgument('start_controller', default_value='false')
 
     # xacro → URDF
     robotDescription = xacro.process_file(pathModelFile).toxml()
@@ -107,7 +111,9 @@ def generate_launch_description():
         package=namePackage,
         executable='push_to_goal.py',
         name='push_to_goal',
-        output='screen'
+        output='screen',
+        parameters=[{'topic': '/model/diff_drive/cmd_vel', 'creep_speed': 0.0}],
+        condition=IfCondition(LaunchConfiguration('start_controller')),
     )
 
     ld = LaunchDescription()
@@ -118,5 +124,6 @@ def generate_launch_description():
     ld.add_action(spawnBoxNodeGazebo)
     ld.add_action(nodeRobotStatePublisher)
     ld.add_action(start_gazebo_ros_bridge_cmd)
+    ld.add_action(start_controller_arg)
     ld.add_action(controller)
     return ld

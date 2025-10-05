@@ -19,12 +19,23 @@ class PushToGoal(Node):
         self.declare_parameter('k_yaw', 0.6)
         self.declare_parameter('log_file', '')
         self.declare_parameter('creep_speed', 0.15)
+        self.declare_parameter('exit_on_done', True)
+        # Topic names
+        self.declare_parameter('box_pose_topic', '/model/push_box/pose')
+        self.declare_parameter('odom_topic', '/model/diff_drive/odometry')
+        self.declare_parameter('imu_topic', '/model/diff_drive/imu')  # may need changing
 
+        # Read parameters
         self.cmd_topic = self.get_parameter('topic').value
         self.vx_cmd = float(self.get_parameter('speed').value)
         self.stop_after = float(self.get_parameter('seconds').value)
         self.k_yaw = float(self.get_parameter('k_yaw').value)
         self.creep_speed = float(self.get_parameter('creep_speed').value)
+        self.exit_on_done = self.get_parameter('exit_on_done').value
+        
+        self.box_pose_topic = self.get_parameter('box_pose_topic').value
+        self.odom_topic = self.get_parameter('odom_topic').value
+        self.imu_topic = self.get_parameter('imu_topic').value
         
         # Open log file (CSV) if provided
         self.log_fh = None
@@ -64,6 +75,16 @@ class PushToGoal(Node):
         self.reached = False
         self.start_time = self.get_clock().now()
 
+        # Diagnostics
+        self._diag_timer = self.create_timer(1.0, self._diag_once)
+    
+    def _diag_once(self):
+        for t in [self.box_pose_topic, self.odom_topic, self.imu_topic]:
+            pubs = self.get_publishers_info_by_topic(t)
+            names = [f'{p.node_name}({p.node_namespace})' for p in pubs]
+            self.get_logger().info(f'Topic {t} publishers: {names or "NONE"}')
+        self._diag_timer.cancel()
+
     # --- Callbacks ---
     def on_box_pose(self, msg: Pose):
         self.box_pose = msg
@@ -77,6 +98,10 @@ class PushToGoal(Node):
     # --- Geometry check: box fully inside goal ---
     def box_fully_in_goal(self):
         if self.box_pose is None:
+            if not self._logged_wait:
+                self._logged_wait = True
+                self.get_logger().info('Waiting for box pose...')
+            self.send_cmd(0.0, 0.0)
             return False
         x = self.box_pose.position.x
         y = self.box_pose.position.y
@@ -87,8 +112,11 @@ class PushToGoal(Node):
         xmax = self.goal_center_x + self.goal_half_x - self.box_half
         ymin = self.goal_center_y - self.goal_half_y + self.box_half
         ymax = self.goal_center_y + self.goal_half_y - self.box_half
-
         return (xmin <= x <= xmax) and (ymin <= y <= ymax)
+    
+    def _shutdown(self):
+        self.get_logger().info('Shutting down node.')
+        rclpy.shutdown()
 
     def control_step(self):
         if self.reached:
@@ -99,6 +127,8 @@ class PushToGoal(Node):
             self.get_logger().info(f'Stopping after {self.stop_after} seconds.')
             self.send_cmd(0.0, 0.0)
             self.reached = True
+            if self.exit_on_done:
+                self.create_timer(0.01, self._shutdown)
             return
         
         if self.cmd_pub.get_subscription_count() == 0 and not self._logged_wait:
@@ -182,7 +212,6 @@ def main():
         if getattr(node, 'log_fh', None):
             node.log_fh.close()
         node.destroy_node()
-        rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
