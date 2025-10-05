@@ -1,29 +1,39 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
+from rclpy.parameter import Parameter
 from geometry_msgs.msg import Twist, Pose
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import Imu
-import math
-import time
+import os
 
 class PushToGoal(Node):
     def __init__(self):
         super().__init__('push_to_goal')
 
-        # --- Parameters (match your world.sdf) ---
+        # --- Parameters (match the world.sdf file) ---
         # CLI Overrides
         self.declare_parameter('topic', '/model/diff_drive/cmd_vel')
         self.declare_parameter('speed', 0.30)
         self.declare_parameter('seconds', 0.0)
+        self.declare_parameter('k_yaw', 0.6)
+        self.declare_parameter('log_file', '')
+        self.declare_parameter('creep_speed', 0.15)
 
         self.cmd_topic = self.get_parameter('topic').value
         self.vx_cmd = float(self.get_parameter('speed').value)
         self.stop_after = float(self.get_parameter('seconds').value)
-
-        # Tweakable parameters
-        self.k_yaw = 0.6               # steer toward y=0 with box y
-        self.creep_speed = 0.15          # m/s when waiting for box pose
+        self.k_yaw = float(self.get_parameter('k_yaw').value)
+        self.creep_speed = float(self.get_parameter('creep_speed').value)
+        
+        # Open log file (CSV) if provided
+        self.log_fh = None
+        log_path = self.get_parameter('log_file').value
+        if log_path:
+            os.makedirs(os.path.dirname(log_path) or '.', exist_ok=True)
+            self.get_logger().info(f'Logging to {log_path}')
+            self.log_fh = open(log_path, 'w')
+            self.log_fh.write('t,box_x,box_y,robot_x,robot_y,robot_vx,robot_wz,imu_wz,imu_ax\n')
 
         # Goal region pose and half-size
         self.goal_center_x = 2.15
@@ -33,10 +43,6 @@ class PushToGoal(Node):
 
         # Box half-size
         self.box_half = 0.8 / 2.0       # 0.4
-
-        # Simple driving gains
-        self.vx_cmd = 0.30              # m/s forward
-        self.k_yaw  = 0.6               # steer toward y=0 with box y
 
         # --- IO ---
         self.cmd_pub = self.create_publisher(Twist, self.cmd_topic, 10)
@@ -56,7 +62,7 @@ class PushToGoal(Node):
         self.print_timer = self.create_timer(1.0, self.print_status)
 
         self.reached = False
-        self.start_time = time.time()
+        self.start_time = self.get_clock().now()
 
     # --- Callbacks ---
     def on_box_pose(self, msg: Pose):
@@ -88,7 +94,8 @@ class PushToGoal(Node):
         if self.reached:
             return
         
-        if self.stop_after > 0.0 and (time.time() - self.start_time) >= self.stop_after:
+        elapsed = (self.get_clock().now() - self.start_time).nanoseconds * 1e-9
+        if self.stop_after > 0.0 and elapsed >= self.stop_after:
             self.get_logger().info(f'Stopping after {self.stop_after} seconds.')
             self.send_cmd(0.0, 0.0)
             self.reached = True
@@ -123,6 +130,12 @@ class PushToGoal(Node):
 
     def print_status(self):
         # Periodic prints to screen
+        t = self.get_clock().now().nanoseconds * 1e-9
+
+        bx = by = None
+        rx = ry = rvx = rwz = None
+        iwz = iax = None
+
         if self.box_pose:
             bx = self.box_pose.position.x
             by = self.box_pose.position.y
@@ -130,11 +143,27 @@ class PushToGoal(Node):
         if self.robot_odom:
             rx = self.robot_odom.pose.pose.position.x
             ry = self.robot_odom.pose.pose.position.y
+            rvx = self.robot_odom.twist.twist.linear.x
+            rwz = self.robot_odom.twist.twist.angular.z
             self.get_logger().info(f'Robot odom: x={rx:.3f}, y={ry:.3f}')
         if self.imu_msg:
-            wz = self.imu_msg.angular_velocity.z
-            ax = self.imu_msg.linear_acceleration.x
-            self.get_logger().info(f'IMU: wz={wz:.3f} rad/s, ax={ax:.3f} m/s^2')
+            iwz = self.imu_msg.angular_velocity.z
+            iax = self.imu_msg.linear_acceleration.x
+            self.get_logger().info(f'IMU: wz={iwz:.3f} rad/s, ax={iax:.3f} m/s^2')
+        if self.log_fh:
+            row = [
+            f'{t:.3f}',
+            '' if bx is None else f'{bx:.4f}',
+            '' if by is None else f'{by:.4f}',
+            '' if rx is None else f'{rx:.4f}',
+            '' if ry is None else f'{ry:.4f}',
+            '' if rvx is None else f'{rvx:.4f}',
+            '' if rwz is None else f'{rwz:.4f}',
+            '' if iwz is None else f'{iwz:.4f}',
+            '' if iax is None else f'{iax:.4f}',
+            ]
+            self.log_fh.write(','.join(row) + '\n')
+            self.log_fh.flush()
 
 def main():
     rclpy.init()
@@ -150,6 +179,8 @@ def main():
     except rclpy.executors.ExternalShutdownException:
         pass
     finally:
+        if getattr(node, 'log_fh', None):
+            node.log_fh.close()
         node.destroy_node()
         rclpy.shutdown()
 
