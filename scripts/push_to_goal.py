@@ -42,6 +42,12 @@ class PushToGoal(Node):
         self.declare_parameter('creep_speed', 0.15)
         self.declare_parameter('exit_on_done', True)
         self.declare_parameter('episode_id', 1)
+        self.declare_parameters(
+            namespace='',
+            parameters=[
+                ('wheel_radius', 0.08),  # [m]
+                ('axle_length', 0.33),   # [m]
+            ])
 
         # Topic names
         self.declare_parameter('box_pose_topic', '/model/push_box/pose')
@@ -248,7 +254,7 @@ class PushToGoal(Node):
         if self.box_fully_in_goal():
             self.reached = True
             self.done_reason = 'goal_reached'
-            self._send_cmd(0.0, 0.0)
+            self.send_cmd(0.0, 0.0)
             self._log_row(done=True)
             if self.exit_on_done:
                 self.create_timer(0.01, self._shutdown)
@@ -288,7 +294,7 @@ class PushToGoal(Node):
             None
         """
         self.reached = True
-        self._send_cmd(0.0, 0.0)
+        self.send_cmd(0.0, 0.0)
         self._log_row(done=True)
         if self.exit_on_done:
             self.create_timer(0.01, self._shutdown)
@@ -398,7 +404,7 @@ class PushToGoal(Node):
         # Collision penalty
         r_collision = 0.0
         # Efficiency penalty (for using high speeds)
-        r_efficiency = -0.01 if (cflag and abs(r_progress < 1e-4)) else 0.0
+        r_efficiency = -0.01 if (cflag and abs(r_progress) < 1e-4) else 0.0
         # Rotation penalty (for turning in place)
         r_rot_pen = -0.001 * abs(self.last_cmd_wz)
         # Goal rewards
