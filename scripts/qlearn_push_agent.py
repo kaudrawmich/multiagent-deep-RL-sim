@@ -620,15 +620,28 @@ def main():
         eps_decay=0.99   # Decay per episode (slower = more exploration)
     )
 
+    def _ensure_rollouts_csv(path):
+        exists = os.path.exists(path)
+        if not exists or os.path.getsize(path) == 0:
+            with open(path, "w", newline="") as f:
+                w = csv.writer(f)
+                w.writerow([
+                    "episode","step","is_eval","epsilon","action",
+                    "vx_cmd","wz_cmd","reward",
+                    "dist_goal","dist_box","contact","in_goal"])
+
     # ===== File Paths =====
     metrics_path = os.environ.get("QLEARN_METRICS", "/tmp/qlearn_metrics.jsonl")
     qtable_path = os.environ.get("QLEARN_QTABLE", "/tmp/qtable.json")
+    rollouts_csv = os.environ.get("ROLLOUTS_CSV", "/tmp/rollouts.csv")
+    _ensure_rollouts_csv(rollouts_csv)
     
     node.get_logger().info("=" * 70)
     node.get_logger().info("  TABULAR Q-LEARNING PUSH AGENT")
     node.get_logger().info("=" * 70)
     node.get_logger().info(f"Metrics log:  {metrics_path}")
     node.get_logger().info(f"Q-table save: {qtable_path}")
+    node.get_logger().info(f"Rollouts csv: {rollouts_csv}")
     node.get_logger().info(f"State space:  ~2.1M states (3^12 * 2 * 2)")
     node.get_logger().info(f"Action space: 4 actions (forward, left, right, stop)")
     node.get_logger().info(f"Hyperparams:  α={agent.alpha}, γ={agent.gamma}, ε₀={agent.eps}, decay={agent.eps_decay}")
