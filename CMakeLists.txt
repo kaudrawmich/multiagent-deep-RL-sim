@@ -26,4 +26,10 @@ install(DIRECTORY scripts/
   DESTINATION lib/${PROJECT_NAME}
   USE_SOURCE_PERMISSIONS)
 
+install(PROGRAMS
+  nodes/box_push_observation_node.py
+  nodes/box_push_dqn_policy_node.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()

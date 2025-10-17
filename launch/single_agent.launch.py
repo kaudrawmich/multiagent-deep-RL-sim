@@ -1,4 +1,4 @@
-#launch/test_launch.launch.py
+#launch/single_agent.launch.py
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -22,6 +22,8 @@ def generate_launch_description():
 
     # Start the controller
     start_controller_arg = DeclareLaunchArgument('start_controller', default_value='false')
+    start_obs_arg = DeclareLaunchArgument('start_obs', default_value='true')
+    start_rl_arg = DeclareLaunchArgument('start_rl', default_value='true')
 
     # xacro → URDF
     robotDescription = xacro.process_file(pathModelFile).toxml()
@@ -117,7 +119,30 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('start_controller')),
     )
 
+    # Observation Node
+    obs = Node(
+        package=namePackage,
+        executable='box_push_observation_node.py',
+        name='box_push_observation',
+        output='screen',
+        parameters=[{'use_sim_time': True}],
+        condition=IfCondition(LaunchConfiguration('start_obs')),
+    )
+
+    # Policy Node
+    rl = Node(
+        package=namePackage,
+        executable='box_push_dqn_policy_node.py',
+        name='box_push_dqn_policy',
+        output='screen',
+        parameters=[{'use_sim_time': True}],
+        condition=IfCondition(LaunchConfiguration('start_rl')),
+    )
+
     ld = LaunchDescription()
+    for a in (start_controller_arg, start_obs_arg, start_rl_arg):
+        ld.add_action(a)
+    
     ld.add_action(set_gz)
     ld.add_action(set_ign)
     ld.add_action(gazeboLaunch)
@@ -125,6 +150,11 @@ def generate_launch_description():
     ld.add_action(spawnBoxNodeGazebo)
     ld.add_action(nodeRobotStatePublisher)
     ld.add_action(start_gazebo_ros_bridge_cmd)
-    ld.add_action(start_controller_arg)
+
+    # Optional controller
     ld.add_action(controller)
+
+    # RL nodes and observation
+    ld.add_action(obs)
+    ld.add_action(rl)
     return ld
