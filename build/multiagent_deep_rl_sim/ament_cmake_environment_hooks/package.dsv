@@ -1,0 +1,4 @@
+source;share/multiagent_deep_rl_sim/local_setup.bash
+source;share/multiagent_deep_rl_sim/local_setup.dsv
+source;share/multiagent_deep_rl_sim/local_setup.sh
+source;share/multiagent_deep_rl_sim/local_setup.zsh

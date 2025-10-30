@@ -1,0 +1,58 @@
+[0.044s] Invoking command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/julia/ros2_ws/src/multiagent-deep-RL-sim -DCMAKE_INSTALL_PREFIX=/home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim
+[0.584s] -- The C compiler identification is GNU 13.3.0
+[1.613s] -- The CXX compiler identification is GNU 13.3.0
+[2.518s] -- Detecting C compiler ABI info
+[3.057s] -- Detecting C compiler ABI info - done
+[3.075s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.092s] -- Detecting C compile features
+[3.094s] -- Detecting C compile features - done
+[3.239s] -- Detecting CXX compiler ABI info
+[3.743s] -- Detecting CXX compiler ABI info - done
+[3.756s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.757s] -- Detecting CXX compile features
+[3.757s] -- Detecting CXX compile features - done
+[3.828s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[4.199s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.676s] -- Configuring done (4.5s)
+[4.697s] -- Generating done (0.0s)
+[4.709s] -- Build files have been written to: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+[4.724s] Invoked command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/julia/ros2_ws/src/multiagent-deep-RL-sim -DCMAKE_INSTALL_PREFIX=/home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim
+[4.727s] Invoking command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim -- -j12 -l12
+[4.814s] Invoked command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim -- -j12 -l12
+[4.836s] Invoking command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+[4.849s] -- Install configuration: ""
+[4.849s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch
+[4.871s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch/single_agent.launch.py
+[4.874s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch/test_launch.launch.py
+[4.875s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/worlds
+[4.878s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/worlds/robot_arena.world
+[4.879s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models
+[4.880s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box
+[4.881s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.config
+[4.882s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.sdf
+[4.883s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive
+[4.885s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.xacro
+[4.886s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.gazebo
+[4.886s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/bridge
+[4.888s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/bridge/robot_bridge.yaml
+[4.889s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim
+[4.892s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/push_to_goal.py
+[4.892s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/qlearn_push_agent.py
+[4.894s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/box_push_observation_node.py
+[4.895s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/box_push_dqn_policy_node.py
+[4.898s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/package_run_dependencies/multiagent_deep_rl_sim
+[4.898s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/parent_prefix_path/multiagent_deep_rl_sim
+[4.901s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.sh
+[4.901s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.dsv
+[4.902s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.sh
+[4.902s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.dsv
+[4.902s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.bash
+[4.903s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.sh
+[4.903s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.zsh
+[4.903s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.dsv
+[4.904s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.dsv
+[4.904s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/packages/multiagent_deep_rl_sim
+[4.905s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig.cmake
+[4.906s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig-version.cmake
+[4.906s] -- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.xml
+[4.909s] Invoked command in '/home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim

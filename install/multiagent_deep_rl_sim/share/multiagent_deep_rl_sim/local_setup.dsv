@@ -1,0 +1,2 @@
+source;share/multiagent_deep_rl_sim/environment/ament_prefix_path.sh
+source;share/multiagent_deep_rl_sim/environment/path.sh

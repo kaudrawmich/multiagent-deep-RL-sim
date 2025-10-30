@@ -1,0 +1,52 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (4.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/build/multiagent_deep_rl_sim
+-- Install configuration: ""
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch/single_agent.launch.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/launch/test_launch.launch.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/worlds
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/worlds/robot_arena.world
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.config
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/push_box/model.sdf
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.xacro
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/models/diff_drive/robot.gazebo
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/bridge
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/bridge/robot_bridge.yaml
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/push_to_goal.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/qlearn_push_agent.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/box_push_observation_node.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/lib/multiagent_deep_rl_sim/box_push_dqn_policy_node.py
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/package_run_dependencies/multiagent_deep_rl_sim
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/parent_prefix_path/multiagent_deep_rl_sim
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.sh
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/ament_prefix_path.dsv
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.sh
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/environment/path.dsv
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.bash
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.sh
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.zsh
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/local_setup.dsv
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.dsv
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/ament_index/resource_index/packages/multiagent_deep_rl_sim
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig.cmake
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/cmake/multiagent_deep_rl_simConfig-version.cmake
+-- Installing: /home/julia/ros2_ws/src/multiagent-deep-RL-sim/install/multiagent_deep_rl_sim/share/multiagent_deep_rl_sim/package.xml
