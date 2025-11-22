@@ -21,7 +21,16 @@
       <collision name="collision">
         <geometry><box><size>0.8 0.8 0.8</size></box></geometry>
         <surface>
-          <contact><restitution_coefficient>0.0</restitution_coefficient></contact>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0</soft_erp>
+            </ode>
+          </contact>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1e-3</threshold>
+          </bounce>
           <friction>
             <ode>
               <mu>0.5</mu><mu2>0.5</mu2>
@@ -43,6 +52,8 @@
   <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
     <publish_model_pose>true</publish_model_pose>
     <publish_link_pose>false</publish_link_pose>
+    <publish_sensor_pose>false</publish_sensor_pose>
+    <publish_nested_model_pose>false</publish_nested_model_pose>
     <use_pose_vector_msg>false</use_pose_vector_msg>
     <update_frequency>30</update_frequency>
   </plugin>

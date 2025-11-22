@@ -10,49 +10,53 @@
   ros_type_name: nav_msgs/msg/Odometry
   gz_type_name: gz.msgs.Odometry
   direction: GZ_TO_ROS
+  lazy: false
 
 # Find the IMU sensor topic
 - topic_name: /model/diff_drive/link/body_link/sensor/imu/imu
   ros_type_name: sensor_msgs/msg/Imu
   gz_type_name: gz.msgs.IMU
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/diff_drive/joint_states
   ros_type_name: sensor_msgs/msg/JointState
   gz_type_name: gz.msgs.Model
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/diff_drive/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/push_box/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/goal_region/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/obstacle_upper/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /model/obstacle_lower/pose
   ros_type_name: geometry_msgs/msg/Pose
   gz_type_name: gz.msgs.Pose
   direction: GZ_TO_ROS
-
-- topic_name: /world/robot_arena/pose/info
-  ros_type_name: ros_gz_interfaces/msg/EntityPose_V
-  gz_type_name: gz.msgs.Pose_V
-  direction: GZ_TO_ROS
+  lazy: false
 
 - topic_name: /clock
   ros_type_name: rosgraph_msgs/msg/Clock
   gz_type_name: gz.msgs.Clock
   direction: GZ_TO_ROS
+  lazy: false

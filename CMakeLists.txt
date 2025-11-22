@@ -28,7 +28,8 @@ install(DIRECTORY scripts/
 
 install(PROGRAMS
   nodes/box_push_observation_node.py
-  nodes/box_push_dqn_policy_node.py
+  nodes/box_push_a2c_policy_node.py
+  scripts/push_to_goal.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

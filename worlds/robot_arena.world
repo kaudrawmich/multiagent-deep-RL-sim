@@ -17,14 +17,6 @@
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
     <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
 
-    <!-- Pose publisher for all models -->
-    <plugin filename="gz-sim-pose-publisher-system"
-            name="gz::sim::systems::PosePublisher">
-      <publish_nested_model_pose>true</publish_nested_model_pose>
-      <use_pose_vector_msg>false</use_pose_vector_msg>
-      <update_frequency>30</update_frequency>
-    </plugin>
-
     <!-- Physics engine settings -->
     <physics name="ode-default" type="ode">
       <max_step_size>0.001</max_step_size>
@@ -210,14 +202,16 @@
           <visualize>false</visualize>
         </sensor>
       </link>
-      <!--
+      
       <plugin filename="gz-sim-pose-publisher-system"
               name="gz::sim::systems::PosePublisher">
+        <publish_model_pose>true</publish_model_pose>
         <publish_link_pose>false</publish_link_pose>
         <publish_sensor_pose>false</publish_sensor_pose>
         <publish_nested_model_pose>false</publish_nested_model_pose>
         <use_pose_vector_msg>false</use_pose_vector_msg>
-      </plugin> -->
+        <update_frequency>30</update_frequency>
+      </plugin>
     </model>
 
     <!-- Obstacle 1: upper cylinder -->
@@ -240,14 +234,16 @@
           </material>
         </visual>
       </link>
-      <!--
+      
       <plugin filename="gz-sim-pose-publisher-system"
               name="gz::sim::systems::PosePublisher">
+        <publish_model_pose>true</publish_model_pose>
         <publish_link_pose>false</publish_link_pose>
         <publish_sensor_pose>false</publish_sensor_pose>
         <publish_nested_model_pose>false</publish_nested_model_pose>
         <use_pose_vector_msg>false</use_pose_vector_msg>
-      </plugin> -->
+        <update_frequency>30</update_frequency>
+      </plugin>
     </model>
 
     <!-- Obstacle 2: lower cylinder -->
@@ -270,14 +266,16 @@
           </material>
         </visual>
       </link>
-      <!--
+      
       <plugin filename="gz-sim-pose-publisher-system"
               name="gz::sim::systems::PosePublisher">
+        <publish_model_pose>true</publish_model_pose>
         <publish_link_pose>false</publish_link_pose>
         <publish_sensor_pose>false</publish_sensor_pose>
         <publish_nested_model_pose>false</publish_nested_model_pose>
         <use_pose_vector_msg>false</use_pose_vector_msg>
-      </plugin> -->
+        <update_frequency>30</update_frequency>
+      </plugin>
     </model>
 
   </world>

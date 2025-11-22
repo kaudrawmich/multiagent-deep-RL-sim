@@ -47,6 +47,8 @@ def generate_launch_description():
             pkg_share,
             TextSubstitution(text=os.pathsep),
             os.path.join(pkg_share, 'models'),
+            TextSubstitution(text=os.pathsep),
+            os.path.join(pkg_share, 'worlds'),
         ],
     )
 
@@ -115,7 +117,7 @@ def generate_launch_description():
         executable='push_to_goal.py',
         name='push_to_goal',
         output='screen',
-        parameters=[{'topic': '/model/diff_drive/cmd_vel', 'creep_speed': 0.0}],
+        parameters=[{'use_sim_time': True, 'topic': '/model/diff_drive/cmd_vel', 'creep_speed': 0.0}],
         condition=IfCondition(LaunchConfiguration('start_controller')),
     )
 
@@ -132,10 +134,12 @@ def generate_launch_description():
     # Policy Node
     rl = Node(
         package=namePackage,
-        executable='box_push_dqn_policy_node.py',
-        name='box_push_dqn_policy',
+        executable='box_push_a2c_policy_node.py',
+        name='box_push_a2c_policy_node',
         output='screen',
-        parameters=[{'use_sim_time': True}],
+        parameters=[{'mode': 'train',
+                     'cmd_topic': '/model/diff_drive/cmd_vel',
+                     'goal_radius': 0.20}],
         condition=IfCondition(LaunchConfiguration('start_rl')),
     )
 
